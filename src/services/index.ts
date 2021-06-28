@@ -1,7 +1,4 @@
-import {  userService } from './userService';
+import userService from './userService';
+import authService from './authService';
 
-const config = {
-  apiUrl: `https://conduit.productionready.io/api`
-};
-
-export { userService, config };
+export { userService, authService };

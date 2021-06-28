@@ -1,5 +1,6 @@
 import {AnyAction, applyMiddleware, createStore, Reducer} from "redux";
 import { promiseMiddleware } from "./middleware";
+import thunk from 'redux-thunk';
 
 const defaultState = {
   appName: 'conduit',
@@ -14,7 +15,8 @@ const reducer: Reducer = (state = defaultState, action: AnyAction) => {
   return state;
 };
 
-const middleware = applyMiddleware(promiseMiddleware);
+// const middleware = applyMiddleware(promiseMiddleware);
+const middleware = [thunk];
 
 const store = createStore(reducer, middleware);
 
